@@ -11,24 +11,24 @@ The Hungry Helper application is designed to store user recipes in a single loca
 
 ## MVP
 
-### Server (Back End)
+#### Server (Back End)
 
 [Entity Relation Diagram](https://app.diagrams.net/#G1DxRbBaogC2GKdNGca_rTGVlzc2WwzJ62)
 
 Built using a Ruby on Rails server to expose RESTful JSON endpoints.  The database has 3 tables with at least 1 association between them.  Rails was used to define models for interacting with the database.  The server has full working CRUD through controller actions in Rails.
 
 
-### Client (Front End)
+#### Client (Front End)
 
 [Wireframe](https://www.figma.com/file/7W3weMZh6maE36Y2yLtExD/Hungry-Helper?node-id=0%3A1)
 
 Built using npx create-react-app.  The front end has at least 8 separately rendered components and provides full CRUD functionality
 
-### Styling
+#### Styling
 
 The app was styled with CSS and Flexbox
 
-### Deployment
+#### Deployment
 
 The frontend was deployed using netlify and backend was deployed using Heroku
 
