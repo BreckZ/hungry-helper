@@ -133,3 +133,38 @@ Completed 204 No Content in 67ms (ActiveRecord: 16.3ms | Allocations: 6435)
 
 
   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users" for ::1 at 2021-11-02 14:31:39 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Parameters: {"user"=>""}
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 328)
+
+
+Started GET "/users" for ::1 at 2021-11-02 14:31:53 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>""}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 27ms (Views: 0.4ms | ActiveRecord: 13.7ms | Allocations: 2169)
+
+
+Started GET "/users" for ::1 at 2021-11-02 14:32:01 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 5ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 682)
+
+
+Started GET "/users" for ::1 at 2021-11-02 14:32:25 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>"id=1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 17ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 682)
+
+
