@@ -37,43 +37,37 @@ The frontend was deployed using netlify and backend was deployed using Heroku
 [Component Tree](https://whimsical.com/hungry-helper-H7LtGVVewScW8Fegvj1BBA)
 
 
-#### Component Architecture
-
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
-
-``` structure
-
-src
-|__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
-|__ components/
-      |__ Header.jsx
-|__ services/
-
-```
-
 #### Time Estimates
 
 > Use this section to estimate the time necessary to build out each of the components you've described above.
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Task                        | Priority | Estimated Time | Time Invested | Actual Time |
+| -------------------         | :------: | :------------: | :-----------: | :---------: |
+| Backend Routes              |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Backend Models              |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Backend Schema              |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Backend Seed                |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Backend Users Table         |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Backend Recipes Table       |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Backend Ingredients Table   |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Landing Page       |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Sign Up Form       |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Sign In Form       |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Create Form        |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Edit Form          |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Delete Button      |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Testing CRUD       |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Recipes Page       |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Home Page          |    H     |     3 hrs      |     0 hrs     |     TBD     |
+| Frontend Styling            |    H     |     6 hrs      |     0 hrs     |     TBD     |
+| TOTAL                       |          |     54 hrs     |     0 hrs     |     TBD     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
-
-<br>
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+Create a rating system for each recipe (5 star)
+Create a weekly menu to track which meals you want to prepare for the week
 
-***
 
 ## Code Showcase
 
