@@ -23,3 +23,82 @@ Migrating to CreateUsers (20211102184508)
   [1m[36mUser Create (7.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "breck1"], ["email", "breck1@email.com"], ["password_digest", "$2a$12$dg9R3G0Gd4oZAUXtr5XKq.D8CEv1yZtTBFISe89l8hJIpPGKoKMcC"], ["created_at", "2021-11-02 19:15:20.081698"], ["updated_at", "2021-11-02 19:15:20.081698"]]
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2021-11-02 14:19:52 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/breckzeyer/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/breckzeyer/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.2ms | Allocations: 462)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 2667)
+
+
+Started POST "/users" for ::1 at 2021-11-02 14:20:03 -0500
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"breck2", "email"=>"breck2@email.com", "password"=>"[FILTERED]"}, "user"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 13.8ms | Allocations: 306)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user
+Did you mean?  user
+               users
+               controller
+               action):
+  
+app/controllers/users_controller.rb:53:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for ::1 at 2021-11-02 14:20:41 -0500
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"breck2", "email"=>"breck2@email.com", "password"=>"[FILTERED]", "user"=>{"username"=>"breck2", "email"=>"breck2@email.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "breck2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "breck2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 422 Unprocessable Entity in 1228ms (Views: 1177.8ms | ActiveRecord: 14.3ms | Allocations: 1344362)
+
+
+Started POST "/users" for ::1 at 2021-11-02 14:22:15 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "user" {
+        "username": "breck2",
+        "email": "breck2@email.com",
+        "password": "123456"
+    }
+}
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms | Allocations: 141)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (809: unexpected token at '{
+    "user" {
+        "username": "breck2",
+        "email": "breck2@email.com",
+        "password": "123456"
+    }
+}'):
+  
+app/controllers/users_controller.rb:53:in `user_params'
+app/controllers/users_controller.rb:19:in `create'
+Started POST "/users" for ::1 at 2021-11-02 14:22:22 -0500
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"breck2", "email"=>"breck2@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "breck2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "breck2@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mUser Create (7.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "breck2"], ["email", "breck2@email.com"], ["password_digest", "$2a$12$bkb7T4mnlUwVbHOu1aGqJOaDLDKaMBkmH02TXckuyuB9JWlnZNrDG"], ["created_at", "2021-11-02 19:22:22.732666"], ["updated_at", "2021-11-02 19:22:22.732666"]]
+  ↳ app/controllers/users_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:20:in `create'
+Completed 201 Created in 326ms (Views: 0.3ms | ActiveRecord: 9.7ms | Allocations: 3898)
+
+
