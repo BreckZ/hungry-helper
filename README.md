@@ -12,17 +12,17 @@ The Hungry Helper application is designed to store user recipes in a single loca
 ## MVP
 
 ### Server (Back End)
--Have a RESTful JSON API.
+*Have a RESTful JSON API.
 
--Build a Ruby on Rails server, exposing RESTful JSON endpoints.
+*Build a Ruby on Rails server, exposing RESTful JSON endpoints.
 
--Build a database with at least 3 tables:
+*Build a database with at least 3 tables:
 
--There must be at least 1 association between your tables. (1:m or m:m)
+*There must be at least 1 association between your tables. (1:m or m:m)
 
--Utilize Rails to define models for interacting with the database.
--Implement working generic controller actions for Full CRUD (index, show, create, update, delete) between your non-User tables
--Note that if you choose to do Authentication, CRUD on your User table does not count toward this requirement.
+*Utilize Rails to define models for interacting with the database.
+*Implement working generic controller actions for Full CRUD (index, show, create, update, delete) between your non-User tables
+*Note that if you choose to do Authentication, CRUD on your User table does not count toward this requirement.
 
 ### Client (Front End)
 -Have a working, interactive React app, built using npx create-react-app.
