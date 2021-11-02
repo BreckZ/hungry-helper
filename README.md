@@ -12,6 +12,9 @@ The Hungry Helper application is designed to store user recipes in a single loca
 ## MVP
 
 ### Server (Back End)
+
+[ERD](https://app.diagrams.net/#G1DxRbBaogC2GKdNGca_rTGVlzc2WwzJ62)
+
 *Have a RESTful JSON API.
 
 *Build a Ruby on Rails server, exposing RESTful JSON endpoints.
