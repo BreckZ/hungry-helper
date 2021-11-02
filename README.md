@@ -1,11 +1,11 @@
 # Hungry-Helper
 
+
 <br>
 
 ## Overview
 
-_**Project Title** is lorem ipsum dolor sit amet. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
-
+The Hungry Helper application is designed to store user recipes in a single location accessible via the web.  Users can add favorite recipes along with editing their existing ones.  This database of recipes also provides users with a mobile experience to make the food preparation process more accessible rather than dealing with books, recipe boxes, and other paper cataloging systems.
 
 <br>
 
