@@ -228,3 +228,57 @@ Processing by AuthenticationsController#login as */*
 Completed 200 OK in 313ms (Views: 0.4ms | ActiveRecord: 11.4ms | Allocations: 9048)
 
 
+Started POST "/auth/login" for ::1 at 2021-11-02 19:52:17 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "authenticate": {
+        "username": "breck1"
+        "password": "123456"
+    }
+}
+Processing by AuthenticationsController#login as */*
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms | Allocations: 3775)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (809: unexpected token at '{
+    "authenticate": {
+        "username": "breck1"
+        "password": "123456"
+    }
+}'):
+  
+app/controllers/authentications_controller.rb:27:in `login_params'
+app/controllers/authentications_controller.rb:6:in `login'
+Started POST "/auth/login" for ::1 at 2021-11-02 19:52:28 -0500
+Processing by AuthenticationsController#login as */*
+  Parameters: {"authenticate"=>{"username"=>"breck1", "password"=>"[FILTERED]"}, "authentication"=>{"authenticate"=>{"username"=>"breck1", "password"=>"[FILTERED]"}}}
+[31mUnpermitted parameter: :authenticate[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:6:in `login'
+[31mUnpermitted parameter: :authenticate[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 3.0ms | Allocations: 2570)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentications_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2021-11-02 19:52:43 -0500
+Processing by AuthenticationsController#login as */*
+  Parameters: {"authentication"=>{"username"=>"breck1", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "breck1"], ["LIMIT", 1]]
+  ↳ app/controllers/authentications_controller.rb:6:in `login'
+Completed 200 OK in 315ms (Views: 0.4ms | ActiveRecord: 10.8ms | Allocations: 4208)
+
+
+Started GET "/auth/verify" for ::1 at 2021-11-02 19:53:20 -0500
+Processing by AuthenticationsController#verify as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 909)
+
+
