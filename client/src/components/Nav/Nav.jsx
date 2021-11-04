@@ -1,37 +1,8 @@
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
 
-const authenticatedOptions = (
-  <>
-    <NavLink className="link">CREATE RECIPE</NavLink>
-    <NavLink className="link">SIGN OUT</NavLink>
-  </>
-);
-
-const unauthenticatedOptions = (
-  <>
-    <NavLink className="link" to="/signin">
-      SIGN IN
-    </NavLink>
-    <NavLink className="link" to="/signup">
-      SIGN UP
-    </NavLink>
-  </>
-);
-
-const alwaysOptions = (
-  <>
-    <NavLink className="link" to="/">
-      HOME
-    </NavLink>
-    <NavLink className="link" to="/recipes">
-      RECIPES
-    </NavLink>
-  </>
-);
-
 function Nav(props) {
-  const { currentUser } = props;
+  const { currentUser, handleSignOut } = props;
   return (
     <nav>
       <NavLink className="logo" to="/">
@@ -42,7 +13,7 @@ function Nav(props) {
           <NavLink className="link" to="/">HOME</NavLink>
           <NavLink className="link" to="/recipes">RECIPES</NavLink>
           <NavLink className='link' to='recipes/create'>CREATE RECIPE</NavLink>
-          <NavLink className='link' to='/signout'>SIGN OUT</NavLink>
+          <NavLink onClick={handleSignOut} className='link' to='/signout'>SIGN OUT</NavLink>
         </div>
       ) : (
           <div className="links">

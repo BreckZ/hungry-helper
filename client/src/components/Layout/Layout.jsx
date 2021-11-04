@@ -3,10 +3,10 @@ import Nav from '../Nav/Nav'
 // import Footer from '../Footer/Footer'
 
 function Layout(props) {
-  const { children, currentUser } = props
+  const { children, currentUser, handleSignOut } = props
   return (
     <div className='layout'>
-      <Nav currentUser={currentUser}/>
+      <Nav currentUser={currentUser} handleSignOut={handleSignOut}/>
       {children}
     </div>
   )
