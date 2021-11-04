@@ -1,21 +1,19 @@
 import './App.css';
 
-import { useState, useEffect } from 'react'
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 
-import Layout from './components/Layout/Layout.jsx'
-
-
+import Layout from './components/Layout/Layout';
 
 function App() {
   return (
     <div className="App">
       <Layout>
-      <Switch>
-
-      </Switch>
+        <Switch>
+          <Route path='/signin'>
+            <h1>SIGN IN</h1>
+          </Route>
+        </Switch>
       </Layout>
-      
     </div>
   );
 }

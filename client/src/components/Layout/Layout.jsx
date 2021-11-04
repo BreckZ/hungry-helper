@@ -1,29 +1,14 @@
-import { Link } from "react-router-dom";
 import './Layout.css'
+import Nav from '../Nav/Nav'
 
-const Layout = (props) => {
-  const { children, currentUser, handleLogout } = props;
+function Layout(props) {
+  const { children } = props
   return (
-    <div>
-      <header>
-        <h1>Hungry Helper</h1>
-        {currentUser ? (
-          <div>
-            <p>{currentUser.username}</p>
-            <p onClick={handleLogout}>Log Out</p>
-          </div>
-        ) : (
-          <Link to="/login">Log In</Link>
-        )}
-        {currentUser && (
-          <div>
-            <Link to='/recipes'>Recipes</Link>
-          </div>
-        )}
-      </header>
+    <div className='layout'>
+      <Nav />
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
