@@ -13,7 +13,7 @@ function Nav(props) {
           <span className='link'>HELLO, {currentUser.username}</span>
           <NavLink className='link' to='/'>HOME</NavLink>
           <NavLink className='link' to='/recipes'>RECIPES</NavLink>
-          <NavLink className='link' to='/create'>CREATE</NavLink>
+          <NavLink className='link' to='/recipes/create'>CREATE</NavLink>
           <NavLink onClick={handleSignOut} className='link' to='/signout'>SIGN OUT</NavLink>
         </div>
       ) : (
