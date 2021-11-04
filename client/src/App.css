@@ -3,10 +3,12 @@
   padding: 10px 0px;   */
   
   
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  /* align-items: center; */
+  /* display: flex; */
+  /* flex-direction: column; */
   font-family: 'Jost', sans-serif;
+  /* height: 100vh; */
+  /* justify-content: space-between; */
   margin: 0;
   width: auto;
 }

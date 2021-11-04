@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SignUp(props) {
   const [formData, setFormData] = useState({
@@ -7,7 +8,7 @@ export default function SignUp(props) {
     password: '',
   });
   const { username, email, password } = formData;
-  const { handleRegister } = props;
+  const { handleSignUp } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,15 +19,21 @@ export default function SignUp(props) {
   };
 
   return (
+    <div className='signup-screen'>
+      <div className='helper-text'>
+      <h3>ALREADY HAVE AN ACCOUNT WITH US?</h3>
+      <Link to='signin'>
+        <h4>SIGN IN</h4>
+        </Link>
+        </div>
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        handleRegister(formData);
-      }}
-    >
-      <h3>Register</h3>
+        handleSignUp(formData);
+      }}>
+        <span className="signup-banner">SIGN UP</span>
       <label>
-        Username:
+        USERNAME:
         <input
           type='text'
           name='username'
@@ -34,14 +41,16 @@ export default function SignUp(props) {
           onChange={handleChange}
         />
       </label>
-      <br />
       <label>
-        Email:
-        <input type='text' name='email' value={email} onChange={handleChange} />
+        EMAIL:
+          <input
+            type='text'
+            name='email'
+            value={email}
+            onChange={handleChange} />
       </label>
-      <br />
       <label>
-        Password:
+        PASSWORD:
         <input
           type='password'
           name='password'
@@ -50,7 +59,8 @@ export default function SignUp(props) {
         />
       </label>
       <br />
-      <button>Submit</button>
-    </form>
+      <button>SIGN UP</button>
+      </form>
+      </div>
   );
 }

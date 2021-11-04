@@ -1,48 +1,59 @@
-import './SignIn.css'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import "./SignIn.css";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-function SignIn() {
+function SignIn(props) {
   const [formData, setFormData] = useState({
-    username: '',
-    password: ''
-  })
+    username: "",
+    password: "",
+  });
 
   const { username, password } = formData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   return (
-    <form>
-      <h2>SIGN IN</h2>
-      <label>
-        USERNAME:
-      <input
-        type='text'
-        name='username'
-        value={username}
-        onChange={handleChange}
-      />
-      </label>
-      <label>
-        PASSWORD:
-      <input
-        type='password'
-        name='password'
-        value={password}
-        onChange={handleChange}
-      />
-      </label>
-      <Link>SIGN IN</Link>
-      <button>SIGN IN</button>
-    </form>
-  )
+    <div className="signin-screen">
+      <div className="helper-text">
+        <h3>DON'T HAVE AN ACCOUNT?</h3>
+          <Link to='/signup'>
+        <h4>SIGN UP</h4>
+          </Link>
+      </div>
+      <form className="signin-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          props.handleSignIn(formData)
+        }}>
+        <span className="signin-banner">SIGN IN</span>
+        <label className="signin-label">
+          USERNAME:
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleChange}
+          />
+        </label>
+        <label className="signin-label">
+          PASSWORD:
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </label>
+          <button>SIGN IN</button>
+      </form>
+    </div>
+  );
 }
 
-export default SignIn
+export default SignIn;
