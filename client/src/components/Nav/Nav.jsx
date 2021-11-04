@@ -9,7 +9,8 @@ function Nav(props) {
         HUNGRY HELPER
       </NavLink>
       {currentUser ? (
-        <div className="links">HELLO, {currentUser.username}
+        <div className="links">
+          <span>HELLO, {currentUser.username}</span>
           <NavLink className="link" to="/">HOME</NavLink>
           <NavLink className="link" to="/recipes">RECIPES</NavLink>
           <NavLink className='link' to='recipes/create'>CREATE RECIPE</NavLink>
