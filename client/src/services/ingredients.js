@@ -10,13 +10,13 @@ export const getOneIngredient = async (id) => {
   return resp.data;
 };
 
-export const postIngredient = async (recipeData) => {
-  const resp = await api.post('/ingredients', { recipe: recipeData });
+export const postIngredient = async (ingredientData) => {
+  const resp = await api.post('/ingredients', { ingredient: ingredientData });
   return resp.data;
 };
 
-export const putIngredient = async (id, recipeData) => {
-  const resp = await api.put(`/ingredients/${id}`, { recipe: recipeData });
+export const putIngredient = async (id, ingredientData) => {
+  const resp = await api.put(`/ingredients/${id}`, { ingredient: ingredientData });
   return resp.data;
 };
 

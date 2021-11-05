@@ -73,6 +73,18 @@ export default function RecipeCreate(props) {
           />
         </label>
         <br />
+        <label>
+          INGREDIENTS:
+          <input
+            type="text"
+            name="image"
+            value={image}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <span>ADD </span><span> DELETE</span>
+        <br />
         <button>CREATE</button>
       </form>
     </>
