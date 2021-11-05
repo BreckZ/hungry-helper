@@ -4,9 +4,7 @@ import { useState, useEffect } from 'react';
 
 function Recipes() {
   return (
-    <Layout>
-      <div>RECIPES</div>
-    </Layout>
+    <div>RECIPES</div>
   );
 }
 
