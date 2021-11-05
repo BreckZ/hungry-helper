@@ -1,0 +1,18 @@
+.recipe-card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-polaroid {
+  border: 2px solid black;
+  color: black;
+  height: 250px;
+  margin: 3%;
+  text-decoration: none;
+  width: 250px;
+}
+
+.recipe-details {
+  margin: 0 auto;
+  text-align: center;
+}

@@ -1,10 +1,16 @@
-import Layout from "../../components/Layout/Layout";
-import { useState, useEffect } from 'react';
+import "./Recipes.css";
+import RecipeCard from "../../components/RecipeCard/RecipeCard";
 
-
-function Recipes() {
+function Recipes(props) {
+  const { recipes } = props;
+  
   return (
-    <div>RECIPES</div>
+    <>
+      <div>RECIPES</div>
+      {recipes.map((recipe) => (
+        <RecipeCard recipe={recipe} />
+      ))};
+    </>
   );
 }
 
