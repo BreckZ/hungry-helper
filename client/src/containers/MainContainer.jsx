@@ -13,6 +13,7 @@ export default function MainContainer(props) {
   const [ingredients, setIngredients] = useState([]);
   const history = useHistory();
   const { currentUser } = props
+  const [recipeId, setRecipeId] = useState(0);
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -32,8 +33,10 @@ export default function MainContainer(props) {
 
   const handleRecipeCreate = async (formData) => {
     const newRecipe = await postRecipe(formData);
+    setRecipeId(newRecipe.id)
     setRecipes((prevState) => [...prevState, newRecipe]);
-    history.push('/recipes');
+    // return newRecipe.id
+    // history.push('/recipes');
   };
 
   const handleIngredientCreate = async (formData) => {
@@ -80,14 +83,14 @@ export default function MainContainer(props) {
           ingredients={ingredients}
           handleRecipeUpdate={handleRecipeUpdate}
           handleIngredientUpdate={handleIngredientUpdate}
-          handleIngredientCreate={handleIngredientCreate}
-        />
+          />
       </Route>
       <Route path='/recipes/create'>
         <RecipeCreate
           currentUser={currentUser}
           handleRecipeCreate={handleRecipeCreate}
           handleIngredientCreate={handleIngredientCreate}
+          recipeId={recipeId}
         />
       </Route>
       <Route path='/recipes/:id'>

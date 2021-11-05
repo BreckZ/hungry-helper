@@ -1,10 +1,13 @@
 import "./RecipeCreate.css";
 
 import { useState } from "react";
+import IngredientForm from "../../components/IngredientForm/IngredientForm";
 // import { Link } from "react-router-dom";
 
 export default function RecipeCreate(props) {
-  const { handleRecipeCreate, currentUser } = props;
+  const { handleRecipeCreate, handleIngredientCreate, currentUser, recipeId } = props;
+
+  const [toggle, setToggle] = useState(false)
   const [formData, setFormData] = useState({
     title: '',
     serving_size: 0,
@@ -12,6 +15,7 @@ export default function RecipeCreate(props) {
     directions: '',
     user_id: '',
   });
+  
   const { title, serving_size, image, directions, user_id } = formData;
 
   const handleChange = (e) => {
@@ -31,6 +35,7 @@ export default function RecipeCreate(props) {
         onSubmit={(e) => {
           e.preventDefault();
           handleRecipeCreate(formData);
+          setToggle(true)
         }}
       >
         <label>
@@ -40,6 +45,7 @@ export default function RecipeCreate(props) {
             name="title"
             value={title}
             onChange={handleChange}
+            disabled={toggle}
           />
         </label>
         <br />
@@ -50,6 +56,7 @@ export default function RecipeCreate(props) {
             name="serving_size"
             value={serving_size}
             onChange={handleChange}
+            disabled={toggle}
           />
         </label>
         <br />
@@ -60,6 +67,7 @@ export default function RecipeCreate(props) {
             name="directions"
             value={directions}
             onChange={handleChange}
+            disabled={toggle}
           />
         </label>
         <br />
@@ -70,10 +78,11 @@ export default function RecipeCreate(props) {
             name="image"
             value={image}
             onChange={handleChange}
+            disabled={toggle}
           />
         </label>
         <br />
-        <label>
+        {/* <label>
           INGREDIENTS:
           <input
             type="text"
@@ -81,12 +90,16 @@ export default function RecipeCreate(props) {
             value={image}
             onChange={handleChange}
           />
-        </label>
+        </label> */}
+        {/* <br />
+        <span>ADD </span><span> DELETE</span> */}
         <br />
-        <span>ADD </span><span> DELETE</span>
-        <br />
-        <button>CREATE</button>
+        <button disabled={toggle} >NEXT</button>
       </form>
+      {toggle && <IngredientForm
+        recipeId={recipeId}
+        handleIngredientCreate={handleIngredientCreate}
+      />}
     </>
   );
 }
