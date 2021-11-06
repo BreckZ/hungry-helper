@@ -31,11 +31,11 @@
 }
 
 .subcon-1 {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: column;
   height: 25em;
-  margin: auto;
+  padding-top: 3em;
   width: 30em;
   width: fit-content;
 }
@@ -89,13 +89,23 @@
 .sub-container-2 {
   border: 2px solid black;
   display: flex;
+  justify-content: space-between;
+  padding: 4em 0em;
+}
+
+.branding {
+  display: block;
 }
 
 .sub-header-text {
   border: 2px solid black;
   font-size: 24px;
-  height: 5em;
-  width: 5em;
+  height: 10em;
+  width: 13em;
+}
+
+.branding-content {
+  font-size: 20px;
 }
 /*===================================*/
 
