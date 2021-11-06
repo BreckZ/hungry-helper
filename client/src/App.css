@@ -1,19 +1,30 @@
 .App {
-  /* border: 4px solid pink;
-  padding: 10px 0px;   */
-  
-  
+  /* border: 4px solid pink; */
+  /* padding: 10px 0px; */
+
   /* align-items: center; */
   /* display: flex; */
   /* flex-direction: column; */
-  font-family: 'Jost', sans-serif;
-  /* height: 100vh; */
+  font-family: "Jost", sans-serif;
+  height: 100vh;
   /* justify-content: space-between; */
-  margin: 0;
+  margin: 0 auto;
   width: auto;
 }
 
+@media print, screen and (min-width: 40em) {
+  .App {
+    background-color: #ffffff;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+}
 
+@media print, screen and (min-width: 20em) {
+  .App {
+
+  }
+}
 
 
 /***** This is informational  *****/
