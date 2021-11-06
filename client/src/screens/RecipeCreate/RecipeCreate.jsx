@@ -17,6 +17,8 @@ export default function RecipeCreate(props) {
   });
   
   const { title, serving_size, image, directions, user_id } = formData;
+  console.log(user_id)
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;

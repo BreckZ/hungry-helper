@@ -7,9 +7,9 @@ export default function RecipeEdit(props) {
   const {
     recipes,
     handleRecipeUpdate,
-    handleIngredientUpdate,
-    currentUser,
-    recipeId,
+    // handleIngredientUpdate,
+    // currentUser,
+    // recipeId,
   } = props;
   const { id } = useParams();
 
@@ -24,6 +24,8 @@ export default function RecipeEdit(props) {
 
   const { title, serving_size, image, directions, user_id } = formData;
 
+  console.log(user_id)
+  
   useEffect(() => {
     const prefillFormData = () => {
       const recipeItem = recipes?.find((recipe) => recipe.id === Number(id));
