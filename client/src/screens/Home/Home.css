@@ -3,23 +3,31 @@
   /* background-color: lightcyan; */
   border: 2px solid cyan;
   height: fit-content;
-  padding: 5em;
+  padding: 4em;
 }
 
-/*===== SUB CONTAINER 1 =====*/
+/*========= SUB CONTAINER 1 =========*/
 .sub-container-1 {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   flex-direction: row;
   justify-content:space-between;
   padding: 5px;
 }
 
+.image-container {
+  height: 32em;
+  width: 32em;
+}
+
 .hero-image {
   background-color: goldenrod;
-  border: 2px solid black;
-  height: 25em;
-  width: 25em;
+  /* border: 2px solid black; */
+  /* height: 32em;
+  width: 32em; */
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .subcon-1 {
@@ -28,22 +36,27 @@
   flex-direction: column;
   height: 25em;
   margin: auto;
-  width: 25em;
+  width: 30em;
   width: fit-content;
 }
 
 .hero-text-container {
-  background-color: lightcoral;
-  border: 2px solid black;
+  /* background-color: lightcoral; */
+  /* border: 2px solid black; */
   height: 5em;
   height: fit-content;
   overflow-wrap: break-word;
-  padding: 3em 0em 0em 0em;
-  width: 25em;
+  padding: 0em 0em 0em 0em;
+  width: 30em;
 }
 .hero-text {
   display: block;
-  font-size: 42px;
+  font-size: 56px;
+  /* letter-spacing: 2.3px */
+}
+
+.designed {
+  color: #f41d37;
 }
 
 .view-recipes-button {
@@ -72,6 +85,11 @@
 }
 /*===================================*/
 
+/*========= SUB CONTAINER 2 =========*/
+.sub-container-2 {
+  border: 2px solid black;
+  display: flex;
+}
 
 .sub-header-text {
   border: 2px solid black;
@@ -79,6 +97,8 @@
   height: 5em;
   width: 5em;
 }
+/*===================================*/
+
 
 .recipe-card {
   border: 2px solid black;
