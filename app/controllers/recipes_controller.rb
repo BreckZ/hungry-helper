@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
 
-    render json: @recipes
+    render json: @recipes, include: :ingredients
   end
 
   # GET /recipes/1
@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
-      render json: @recipe, status: :created, location: @recipe
+      render json: @recipe, include: :ingredients, status: :created, location: @recipe
     else
       render json: @recipe.errors, status: :unprocessable_entity
     end
@@ -26,8 +26,12 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1
   def update
-    if @recipe.update(recipe_params)
-      render json: @recipe
+    if @recipe.update(recipe_params.except(:ingredients))
+      @ingredients = recipe_params[:ingredients].map do |ing|
+        Ingredient.new(food_name: ing[:food_name])
+      end
+      @recipe.ingredients = @ingredients
+      render json: @recipe, include: :ingredients
     else
       render json: @recipe.errors, status: :unprocessable_entity
     end
@@ -46,6 +50,6 @@ class RecipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recipe_params
-      params.require(:recipe).permit(:title, :serving_size, :image, :directions, :user_id)
+      params.require(:recipe).permit(:title, :serving_size, :image, :directions, :user_id, ingredients:[ :id, :food_name, :created_at, :updated_at, :recipe_id ])
     end
 end
