@@ -1,6 +1,6 @@
 .recipe-card-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .recipe-polaroid {

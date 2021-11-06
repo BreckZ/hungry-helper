@@ -27,6 +27,8 @@ export default function RecipeCreate(props) {
     }));
   };
 
+  // console.log(user_id) // figure out why this isn't being used
+
   return (
     <>
       <span className='create-recipe-banner'>CREATE A RECIPE</span>

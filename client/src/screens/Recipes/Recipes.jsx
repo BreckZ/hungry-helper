@@ -3,13 +3,14 @@ import RecipeCard from "../../components/RecipeCard/RecipeCard";
 
 function Recipes(props) {
   const { recipes } = props;
-  
+
   return (
     <>
-      <div>RECIPES</div>
-      {recipes.map((recipe) => (
-        <RecipeCard recipe={recipe} />
-      ))};
+      <div className='recipes-container'>
+        {recipes.map((recipe, index) => (
+          <RecipeCard recipe={recipe} key={index} />
+        )).reverse()}
+      </div>
     </>
   );
 }

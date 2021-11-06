@@ -9,11 +9,12 @@ import RecipeEdit from '../screens/RecipeEdit/RecipeEdit';
 import RecipeDetail from '../screens/RecipeDetail/RecipeDetail';
 
 export default function MainContainer(props) {
+  const { currentUser } = props
   const [recipes, setRecipes] = useState([]);
   const [ingredients, setIngredients] = useState([]);
-  const history = useHistory();
-  const { currentUser } = props
   const [recipeId, setRecipeId] = useState(0);
+  const [toggle, setToggle] = useState(true)
+  const history = useHistory();
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -21,7 +22,7 @@ export default function MainContainer(props) {
       setRecipes(recipeList);
     };
     fetchRecipes();
-  }, []);
+  }, [toggle]);
 
   useEffect(() => {
     const fetchIngredients = async () => {
@@ -40,39 +41,62 @@ export default function MainContainer(props) {
   };
 
   const handleIngredientCreate = async (formData) => {
+    try { 
     const newIngredient = await postIngredient(formData);
     setIngredients((prevState) => [...prevState, newIngredient]);
     history.push('/recipes');
+    } catch (error) {
+      console.log(error)
+  }
   };
 
   const handleRecipeUpdate = async (id, formData) => {
-    const newRecipe = await putRecipe(id, formData);
-    setRecipes((prevState) =>
-      prevState.map((recipe) => {
-        return recipe.id === Number(id) ? newRecipe : recipe;
-      })
-    );
-    history.push('/recipes');
+    try {
+      const newRecipe = await putRecipe(id, formData);
+      setRecipes((prevState) =>
+        prevState.map((recipe) => {
+          return recipe.id === Number(id) ? newRecipe : recipe;
+        })
+      );
+      // setToggle(prevState => !prevState)
+      history.push('/recipes');
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   const handleIngredientUpdate = async (id, formData) => {
-    const newIngredient = await putIngredient(id, formData);
-    setIngredients((prevState) =>
-      prevState.map((ingredient) => {
-        return ingredient.id === Number(id) ? newIngredient : ingredient;
-      })
-    );
-    history.push('/recipes');
+    try {
+      const newIngredient = await putIngredient(id, formData);
+      setIngredients((prevState) =>
+        prevState.map((ingredient) => {
+          return ingredient.id === Number(id) ? newIngredient : ingredient;
+        })
+      );
+      history.push('/recipes');
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   const handleRecipeDelete = async (id) => {
-    await deleteRecipe(id);
-    setRecipes((prevState) => prevState.filter((recipe) => recipe.id !== id));
+    try {
+      await deleteRecipe(id);
+      setRecipes((prevState) => prevState.filter((recipe) => recipe.id !== id));
+    } catch (error) {
+      console.log(error)
+    }
+    setToggle(prevState => !prevState)
+    history.push('/recipes')
   };
 
   const handleIngredientDelete = async (id) => {
-    await deleteIngredient(id);
-    setIngredients((prevState) => prevState.filter((ingredient) => ingredient.id !== id));
+    try {
+      await deleteIngredient(id);
+      setIngredients((prevState) => prevState.filter((ingredient) => ingredient.id !== id));
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (
@@ -83,6 +107,7 @@ export default function MainContainer(props) {
           ingredients={ingredients}
           handleRecipeUpdate={handleRecipeUpdate}
           handleIngredientUpdate={handleIngredientUpdate}
+          
           />
       </Route>
       <Route path='/recipes/create'>
@@ -95,6 +120,7 @@ export default function MainContainer(props) {
       </Route>
       <Route path='/recipes/:id'>
         <RecipeDetail
+          currentUser={currentUser}
           recipes={recipes}
           ingredients={ingredients}
           handleRecipeDelete={handleRecipeDelete}

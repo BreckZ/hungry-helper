@@ -39,7 +39,7 @@ function IngredientForm(props) {
 
   return (
     <>
-      <div>RECIPE EDIT</div>
+      <div>INGREDIENTS:</div>
 
       <form
         onSubmit={(e) => {
