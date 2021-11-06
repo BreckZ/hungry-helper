@@ -3,6 +3,7 @@ import { Switch, Route, useHistory } from 'react-router-dom';
 
 import { deleteRecipe, getAllRecipes, postRecipe, putRecipe } from '../services/recipes';
 import { deleteIngredient, getAllIngredients, postIngredient, putIngredient } from '../services/ingredients';
+import Home from '../screens/Home/Home'
 import Recipes from '../screens/Recipes/Recipes';
 import RecipeCreate from '../screens/RecipeCreate/RecipeCreate';
 import RecipeEdit from '../screens/RecipeEdit/RecipeEdit';
@@ -132,6 +133,9 @@ export default function MainContainer(props) {
           recipes={recipes}
           ingredients={ingredients}
         />
+      </Route>
+      <Route path='/'>
+        <Home />
       </Route>
     </Switch>
   );

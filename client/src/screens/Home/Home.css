@@ -1,0 +1,87 @@
+/*===== THIS WRAPS THE ENTIRE HOME PAGE =====*/
+.home-container {
+  /* background-color: lightcyan; */
+  border: 2px solid cyan;
+  height: fit-content;
+  padding: 5em;
+}
+
+/*===== SUB CONTAINER 1 =====*/
+.sub-container-1 {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  padding: 5px;
+}
+
+.hero-image {
+  background-color: goldenrod;
+  border: 2px solid black;
+  height: 25em;
+  width: 25em;
+}
+
+.subcon-1 {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 25em;
+  margin: auto;
+  width: 25em;
+  width: fit-content;
+}
+
+.hero-text-container {
+  background-color: lightcoral;
+  border: 2px solid black;
+  height: 5em;
+  height: fit-content;
+  overflow-wrap: break-word;
+  padding: 3em 0em 0em 0em;
+  width: 25em;
+}
+.hero-text {
+  display: block;
+  font-size: 42px;
+}
+
+.view-recipes-button {
+  background-color: #f41d37;
+  border: none;
+  box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  -webkit-box-shadow: 2px 2px 4px rgb(128, 128, 128);
+     -moz-box-shadow: 2px 2px 4px rgb(128, 128, 128);
+          box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  color: #edf2f4;
+  font-weight: bold;
+  border-radius: 5em;
+  height: 2.5em;
+  margin: 2em 0em 0em 0em;
+  width: 12em;
+}
+
+.view-recipes-button:active {
+  background: #e5e5e5;
+  background-color: #f41d37;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+  transform: translate(2px, 2px);
+}
+/*===================================*/
+
+
+.sub-header-text {
+  border: 2px solid black;
+  font-size: 24px;
+  height: 5em;
+  width: 5em;
+}
+
+.recipe-card {
+  border: 2px solid black;
+  height: 5em;
+  width: 5em;
+}
