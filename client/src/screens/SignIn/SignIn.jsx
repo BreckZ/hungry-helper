@@ -23,11 +23,11 @@ function SignIn(props) {
       <div className="helper-text">
         <h3>DON'T HAVE AN ACCOUNT?</h3>
         <Link className="signup-link" to="/signup">
-          <h4>SIGN UP &rsaquo;</h4>
+          <h4>SIGN UP <span className="right-chevron">&rsaquo;</span></h4>
         </Link>
       </div>
 
-      <div className="form-wrapper">
+      <div className="signin-form-wrapper">
         <form
           className="signin-form"
           onSubmit={(e) => {

@@ -6,9 +6,10 @@
 }
 
 .recipe-polaroid {
-  border: 2px solid black;
-  color: black;
-  height: 25em;
+  /* border: 2px solid black; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #000000;
+  height: 20em;
   margin: 3%;
   text-decoration: none;
   width: 20em;
@@ -20,7 +21,7 @@
 }
 
 .image {
-  border: 2px solid goldenrod;
+  /* border: 2px solid goldenrod; */
   width: 100%;
   height: 60%;
 }
@@ -28,4 +29,8 @@
 .title {
   font-size: 1.2em;
   padding: 1em 0em;
+}
+
+.serving {
+  color: #f41d37;
 }
