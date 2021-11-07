@@ -22,36 +22,44 @@ function SignIn(props) {
     <div className="signin-screen">
       <div className="helper-text">
         <h3>DON'T HAVE AN ACCOUNT?</h3>
-          <Link to='/signup'>
-        <h4>SIGN UP</h4>
-          </Link>
+        <Link className="signup-link" to="/signup">
+          <h4>SIGN UP &rsaquo;</h4>
+        </Link>
       </div>
-      <form className="signin-form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          props.handleSignIn(formData)
-        }}>
-        <span className="signin-banner">SIGN IN</span>
-        <label className="signin-label">
-          USERNAME:
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={handleChange}
-          />
-        </label>
-        <label className="signin-label">
-          PASSWORD:
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={handleChange}
-          />
-        </label>
-          <button>SIGN IN</button>
-      </form>
+
+      <div className="form-wrapper">
+        <form
+          className="signin-form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            props.handleSignIn(formData);
+          }}
+        >
+          <span className="signin-banner">SIGN IN</span>
+          <label className="signin-label">
+            USERNAME:
+            <input
+              className="signin-input"
+              type="text"
+              name="username"
+              value={username}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="signin-label">
+            PASSWORD:
+            <input
+              className="signin-input"
+              type="password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+            />
+          </label>
+          <button className="signin-button">SIGN IN</button>
+        </form>
+      </div>
+
     </div>
   );
 }

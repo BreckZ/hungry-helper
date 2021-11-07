@@ -11,7 +11,7 @@
   /* border: 1px solid black; */
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   padding: 5px;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .hero-image {
-  background-color: goldenrod;
+  /* background-color: goldenrod; */
   /* border: 2px solid black; */
   /* height: 32em;
   width: 32em; */
@@ -36,7 +36,6 @@
   flex-direction: column;
   height: 25em;
   padding-top: 3em;
-  width: 30em;
   width: fit-content;
 }
 
@@ -51,12 +50,36 @@
 }
 .hero-text {
   display: block;
-  font-size: 56px;
+  flex-shrink: 1;
+  font-size: 3.6em;
   /* letter-spacing: 2.3px */
+}
+
+.dinner {
+  /* animation-delay: 2000s;
+  animation: fadeIn lineaer 2s;
+  -webkit-animation: fadeIn linear 2s;
+  -moz-animation: fadeIn linear 2s;
+  -o-animation: fadeIn linear 2s;
+  -ms-animation: fadeIn linear 2s; */
 }
 
 .designed {
   color: #f41d37;
+  /* animation-delay: 4000s;
+  animation: fadeIn lineaer 4s;
+  -webkit-animation: fadeIn linear 4s;
+  -moz-animation: fadeIn linear 4s;
+  -o-animation: fadeIn linear 4s;
+  -ms-animation: fadeIn linear 4s; */
+}
+
+.terms {
+  /* animation: fadeIn lineaer 6s;
+  -webkit-animation: fadeIn linear 6s;
+  -moz-animation: fadeIn linear 6s;
+  -o-animation: fadeIn linear 6s;
+  -ms-animation: fadeIn linear 6s; */
 }
 
 .view-recipes-button {
@@ -64,8 +87,8 @@
   border: none;
   box-shadow: 2px 2px 4px rgb(128, 128, 128);
   -webkit-box-shadow: 2px 2px 4px rgb(128, 128, 128);
-     -moz-box-shadow: 2px 2px 4px rgb(128, 128, 128);
-          box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  -moz-box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  box-shadow: 2px 2px 4px rgb(128, 128, 128);
   color: #edf2f4;
   font-weight: bold;
   border-radius: 5em;
@@ -87,10 +110,10 @@
 
 /*========= SUB CONTAINER 2 =========*/
 .sub-container-2 {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: flex;
   justify-content: space-between;
-  padding: 4em 0em;
+  padding: 6em 0em 2em 0em;
 }
 
 .branding {
@@ -98,7 +121,7 @@
 }
 
 .sub-header-text {
-  border: 2px solid black;
+  /* border: 2px solid black; */
   font-size: 24px;
   height: 10em;
   width: 13em;
@@ -109,9 +132,58 @@
 }
 /*===================================*/
 
+/*========= SUB CONTAINER 3 =========*/
+.sub-container-3 {
+  border: 2px solid cyan;
+  display: flex;
+  justify-content: space-between;
+  padding: 4em 0em;
+}
 
 .recipe-card {
-  border: 2px solid black;
-  height: 5em;
-  width: 5em;
+  border: 2px solid purple;
+  height: 25em;
+  width: 20em;
+  /* object-fit: cover;
+  width: 100%;
+  height */
 }
+
+.card-image-container {
+  border: 3px solid goldenrod;
+}
+
+.card-image {
+  border: 2px solid palegreen;
+  height: 60%;
+  object-fit: cover;
+  width: 100%;
+}
+/*===================================*/
+
+/*=========== TRANSITIONS ===========*/
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+/*===================================*/

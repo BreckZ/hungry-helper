@@ -26,14 +26,16 @@ function RecipeDetail(props) {
   return (
     <>
       <div>RECIPE DETAIL</div>
-      <img src={recipe.image} alt={recipe.image} />
+      <div className="detail-image-container">
+        <img className="detail-image" src={recipe.image} alt={recipe.image} />
+        </div>
       <div>{recipe.title}</div>
       <div>
         {ingredients?.map((list) => {
-          return <div key={list?.id}>{list?.food_name}</div>;
+          return <div key={list?.id}>{list?.food_name}</div>
         })}
       </div>
-      {currentUser.id === recipe.user_id && (
+      {currentUser?.id === recipe.user_id && (
         <>
           <Link to={`/recipes/${id}/edit`}>
             <button>EDIT</button>
