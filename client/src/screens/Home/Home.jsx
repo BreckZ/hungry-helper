@@ -17,7 +17,7 @@ function Home() {
             <div className="hero-text-container">
               <span className="hero-text dinner">DINNER </span>
               <span className="hero-text designed">DESIGNED </span>
-              <span className="hero-text terms">ON YOUR TERMS</span>
+              <span className="hero-text terms">ON <span className="your">YOUR</span> TERMS</span>
             </div>
             <Link to="/recipes">
               <button type="button" className="view-recipes-button">

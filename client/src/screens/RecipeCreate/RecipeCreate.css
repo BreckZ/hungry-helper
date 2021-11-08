@@ -28,7 +28,6 @@
   /* border: 2px solid black; */
   display: block;
   font-size: 1.7em;
-  margin-bottom: 1em;
   text-align: center;
   width: 100%;
 }
@@ -49,7 +48,6 @@
 }
 
 .create-form-ing-button {
-  align-self: center;
   background-color: #f41d37;
   border: none;
   box-shadow: 2px 2px 4px rgb(128, 128, 128);
@@ -60,7 +58,7 @@
   font-weight: bold;
   border-radius: 5em;
   height: 2.5em;
-  margin: 1em 0em 0em 0em;
+  margin: 1em 0em;
   width: 12em;
 }
 

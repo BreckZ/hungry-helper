@@ -36,8 +36,9 @@ export default function RecipeCreate(props) {
     <>
       <div className="create-recipe-ruler">
         <div className="create-recipe-container">
+          <div className="create-recipe-form">
             <form
-              className="create-recipe-form"
+              // className="create-recipe-form"
               onSubmit={(e) => {
                 e.preventDefault();
                 handleRecipeCreate(formData);
@@ -97,14 +98,15 @@ export default function RecipeCreate(props) {
                 ADD INGREDIENTS
               </button>
               <br />
+            </form>
               {toggle && (
                 <IngredientForm
                   className="create-form-input"
                   recipeId={recipeId}
                   handleIngredientCreate={handleIngredientCreate}
                 />
-              )}
-            </form>
+            )}
+            </div>
           </div>
       </div>
     </>

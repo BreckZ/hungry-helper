@@ -1,6 +1,5 @@
 import './IngredientForm.css'
 import { useState } from "react";
-import { Link } from 'react-router-dom';
 
 function IngredientForm(props) {
   const { handleIngredientCreate, recipeId } = props;
@@ -84,9 +83,7 @@ function IngredientForm(props) {
           ADD
         </button>
         <br />
-        <Link to="/recipes">
         <button className="ing-form-button">SUBMIT</button>
-        </Link>
       </form>
     </>
   );

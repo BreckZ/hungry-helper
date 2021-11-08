@@ -56,31 +56,39 @@
 }
 
 .dinner {
-  /* animation-delay: 2000s;
-  animation: fadeIn lineaer 2s;
-  -webkit-animation: fadeIn linear 2s;
-  -moz-animation: fadeIn linear 2s;
-  -o-animation: fadeIn linear 2s;
-  -ms-animation: fadeIn linear 2s; */
+  opacity: 0;
+  
+  animation: fadeIn 1000ms ease-in 1s forwards;
+  /* -webkit-animation: fadeIn 2s forwards;
+  -moz-animation: fadeIn 2s forwards;
+  -o-animation: fadeIn 2s forwards;
+  -ms-animation: fadeIn 2s forwards; */
 }
 
 .designed {
   color: #f41d37;
-  /* animation-delay: 4000s;
-  animation: fadeIn lineaer 4s;
-  -webkit-animation: fadeIn linear 4s;
+  opacity: 0;
+  animation: fadeIn 2000ms ease-in 2s forwards;
+  /* -webkit-animation: fadeIn linear 4s;
   -moz-animation: fadeIn linear 4s;
   -o-animation: fadeIn linear 4s;
   -ms-animation: fadeIn linear 4s; */
 }
 
+
 .terms {
-  /* animation: fadeIn lineaer 6s;
-  -webkit-animation: fadeIn linear 6s;
+  opacity: 0;
+  animation: fadeIn 3000ms ease-in 3s forwards;
+  /* -webkit-animation: fadeIn linear 6s;
   -moz-animation: fadeIn linear 6s;
   -o-animation: fadeIn linear 6s;
   -ms-animation: fadeIn linear 6s; */
 }
+
+/* .your {
+  opacity: 0;
+  animation: fadeIn 2000ms ease-in 2s forwards;
+} */
 
 .view-recipes-button {
   background-color: #f41d37;
