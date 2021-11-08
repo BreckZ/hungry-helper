@@ -1,3 +1,9 @@
+.recipes-banner {
+  font-size: 1.7em;
+  margin: 1.5em 0em;
+  text-align: center;
+}
+
 .recipes-container {
   display: flex;
   flex-direction: row;

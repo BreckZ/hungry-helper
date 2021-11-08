@@ -1,9 +1,10 @@
 .detail-ruler {
+  align-items: center;
+  border: 2px solid cyan;
+  display: flex;
+  flex-direction: Row;
   height: 80vh;
-}
-
-.detail-container {
-  
+  padding: 2em;
 }
 
 .detail-image-container {
@@ -17,4 +18,71 @@
 .detail-image {
   height: 100%;
   width: 100%;
+}
+
+.detail-container {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column; 
+  padding: 0em 0em 0em 4em;
+  height: 32em;
+  width: 32em;
+}
+
+.detail-title {
+  font-size: 2em;
+}
+
+.detail-serving {
+  font-size: 1.5em;
+  margin: .5em 0em;
+}
+
+.preparation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.detail-ingredients {
+  /* font-size: 1.2em; */
+  margin: .5em 0em;
+}
+
+.detail-directions {
+  /* font-size: 1.2em; */
+  margin: .5em 0em;
+  margin: 0 auto;
+}
+
+.detail-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.detail-button {
+  align-self: center;
+  background-color: #f41d37;
+  border: none;
+  box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  -webkit-box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  -moz-box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5em;
+  height: 2.5em;
+  margin: 2em 0em 0em 0em;
+  width: 12em;
+}
+
+.detail-button:active {
+  background: #e5e5e5;
+  background-color: #f41d37;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+  transform: translate(2px, 2px);
 }

@@ -45,8 +45,8 @@
   height: 5em;
   height: fit-content;
   overflow-wrap: break-word;
-  padding: 0em 0em 0em 0em;
-  width: 30em;
+  padding: 0em 0em 0em 5em;
+  width: fit-content
 }
 .hero-text {
   display: block;

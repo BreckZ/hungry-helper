@@ -28,26 +28,37 @@ function RecipeDetail(props) {
   return (
     <>
       <div className="detail-ruler">
+        <div className="detail-image-container">
+          <img className="detail-image" src={recipe.image} alt={recipe.title} />
+        </div>
         <div className="detail-container">
-          <div className="detail-image-container">
-            <img
-              className="detail-image"
-              src={recipe.image}
-              alt={recipe.title}
-            />
-          </div>
-          <div>{recipe.title}</div>
-          <div>
-            {ingredients?.map((list) => {
-              return <div key={list?.id}>{list?.food_name}</div>;
-            })}
+          <div className="detail-title">{recipe.title}</div>
+          <div className="detail-serving">Serves: {recipe.serving_size}</div>
+          <div className="preparation">
+            <div className="detail-ingredients">
+              Ingredients:
+              {ingredients?.map((list) => {
+                return <div key={list?.id}>{list?.food_name}</div>;
+              })}
+            </div>
+            <div className="detail-directions">
+              Directions:
+              <div>{recipe.directions}</div>
+            </div>
           </div>
           {currentUser?.id === recipe.user_id && (
             <>
-              <Link to={`/recipes/${id}/edit`}>
-                <button>EDIT</button>
-              </Link>
-              <button onClick={() => handleRecipeDelete(id)}>DELETE</button>
+              <div className="detail-button-container">
+                <Link to={`/recipes/${id}/edit`}>
+                  <button className="detail-button">EDIT</button>
+                </Link>
+                <button
+                  className="detail-button"
+                  onClick={() => handleRecipeDelete(id)}
+                >
+                  DELETE
+                </button>
+              </div>
             </>
           )}
         </div>

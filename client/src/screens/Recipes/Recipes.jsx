@@ -6,7 +6,7 @@ function Recipes(props) {
 
   return (
     <>
-      <div>BROWSE RECIPES</div>
+      <div className="recipes-banner">BROWSE RECIPES</div>
       <div className='recipes-container'>
         {recipes.map((recipe, index) => (
           <RecipeCard recipe={recipe} key={index} />
