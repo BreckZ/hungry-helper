@@ -36,13 +36,13 @@ function RecipeDetail(props) {
           <div className="detail-serving">Serves: {recipe.serving_size}</div>
           <div className="preparation">
             <div className="detail-ingredients">
-              Ingredients:
+              <span className="ingredients">Ingredients:</span>
               {ingredients?.map((list) => {
                 return <div key={list?.id}>{list?.food_name}</div>;
               })}
             </div>
             <div className="detail-directions">
-              Directions:
+              <span className="directions">Directions:</span>
               <div>{recipe.directions}</div>
             </div>
           </div>

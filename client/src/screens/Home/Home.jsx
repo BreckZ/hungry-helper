@@ -47,14 +47,14 @@ function Home() {
           <div className="sub-header-text">
             <span className="branding-header branding">SAVOR</span>
             <span className="branding-content branding">
-              The Hungry Helper aspires to provide you with an experience that will
-              keep you coming back to enjoy these tried and tested recipes and make
-              dinner time the prime time of your day.
+              The Hungry Helper aspires to provide you with an experience that
+              will keep you coming back to enjoy these tried and tested recipes
+              and make dinner time the prime time of your day.
             </span>
           </div>
         </div>
 
-        <div className="sub-container-3-banner">FEATURED RECIPES</div>
+        {/* <div className="sub-container-3-banner">FEATURED RECIPES</div>
         <div className="sub-container-3">
           <div className="recipe-card">
             <img
@@ -79,7 +79,7 @@ function Home() {
               alt="spaghetti and meatballs"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
