@@ -49,9 +49,9 @@ function RecipeDetail(props) {
           {currentUser?.id === recipe.user_id && (
             <>
               <div className="detail-button-container">
-                <Link to={`/recipes/${id}/edit`}>
+                {/* <Link to={`/recipes/${id}/edit`}> */}
                   <button className="detail-button">EDIT</button>
-                </Link>
+                {/* </Link> */}
                 <button
                   className="detail-button"
                   onClick={() => handleRecipeDelete(id)}
