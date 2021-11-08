@@ -1,21 +1,23 @@
+import './IngredientForm.css'
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 function IngredientForm(props) {
-  const {handleIngredientCreate, recipeId} = props
+  const { handleIngredientCreate, recipeId } = props;
   const [formData, setFormData] = useState([
     {
-      food_name: '',
-      recipe_id: '',
+      food_name: "",
+      recipe_id: "",
     },
   ]);
 
   const handleChange = (e, index) => {
     const { name, value } = e.target;
 
-    const form = [...formData]
+    const form = [...formData];
     form[index][name] = value;
-    form[index].recipe_id = recipeId
-    setFormData(form)
+    form[index].recipe_id = recipeId;
+    setFormData(form);
     // setFormData((prevState) => ({
     //   ...prevState,
     //   recipe_id: "",
@@ -24,66 +26,70 @@ function IngredientForm(props) {
   };
 
   const handleAddInput = () => {
-    setFormData([...formData, { food_name: '', recipe_id: '' }]);
+    setFormData([...formData, { food_name: "", recipe_id: "" }]);
     // const form = [...formData];
     // form.push({ food_name: '', recipe_id: '' })
     // setFormData(form)
-    console.log(recipeId)
+    console.log(recipeId);
   };
 
   const handleRemoveInput = (index) => {
     const form = [...formData];
-    form.splice(index, 1)
-    setFormData(form)
-  }
+    form.splice(index, 1);
+    setFormData(form);
+  };
 
   return (
     <>
-      <div>INGREDIENTS:</div>
-
+      <div className="ing-form-banner">INGREDIENTS:</div>
       <form
+        className="ing-form"
         onSubmit={(e) => {
           e.preventDefault();
-          formData.map((ingredient) => handleIngredientCreate(ingredient))
-        }}>
-      {formData.map((input, index) => {
-        return (
-          <div key={index}>
-            <input
-              type="text"
-              name="food_name"
-              value={input.food_name}
-              placeholder="food_name"
-              onChange={(e) => handleChange(e, index)}
-            />
-            {/* <input
-              type="text"
-              name="recipe_id"
-              value={input.recipe_id}
-              placeholder="recipe_id"
-              onChange={(e) => handleChange(e, index)}
-            /> */}
-            {formData.length !== 1 && <button type="button" name="remove"
-              onClick={() => handleRemoveInput(index)}>
-              -
-            </button>}
-            <br />
-          </div>
-        );
-      })}
-        
-      <button type="button" name="add" onClick={handleAddInput}>
-        +
-      </button>
-      <br />
-            <button>SUBMIT</button>
+          formData.map((ingredient) => handleIngredientCreate(ingredient));
+        }}
+      >
+        {formData.map((input, index) => {
+          return (
+            <div
+              className="ing-form-container"
+              key={index}>
+              <input
+                className="ing-form-input"
+                type="text"
+                name="food_name"
+                value={input.food_name}
+                placeholder="ingredient"
+                onChange={(e) => handleChange(e, index)}
+              />
+              {formData.length !== 1 && (
+                <button
+                  className="ing-form-delete-button"
+                  type="button"
+                  name="remove"
+                  onClick={() => handleRemoveInput(index)}
+                >
+                X
+                </button>
+              )}
+            </div>
+          );
+        })}
+
+        <button
+          className="ing-form-button"
+          type="button"
+          name="add"
+          onClick={handleAddInput}>
+          ADD
+        </button>
+        <br />
+        <Link to="/recipes">
+        <button className="ing-form-button">SUBMIT</button>
+        </Link>
       </form>
-      <br />
-      {JSON.stringify(formData, null, 2)}
     </>
   );
 }
 
 export default IngredientForm;
-
-

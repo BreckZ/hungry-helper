@@ -1,5 +1,20 @@
+.detail-ruler {
+  height: 80vh;
+}
+
+.detail-container {
+  
+}
+
 .detail-image-container {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
   height: 32em;
   width: 32em;
-  width: fit-content;
+}
+
+.detail-image {
+  height: 100%;
+  width: 100%;
 }

@@ -5,20 +5,21 @@ import IngredientForm from "../../components/IngredientForm/IngredientForm";
 // import { Link } from "react-router-dom";
 
 export default function RecipeCreate(props) {
-  const { handleRecipeCreate, handleIngredientCreate, currentUser, recipeId } = props;
+  const { handleRecipeCreate, handleIngredientCreate, currentUser, recipeId } =
+    props;
 
-  const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false);
+
   const [formData, setFormData] = useState({
-    title: '',
+    title: "",
     serving_size: 0,
-    image: '',
-    directions: '',
-    user_id: '',
+    image: "",
+    directions: "",
+    user_id: "",
   });
-  
-  const { title, serving_size, image, directions, user_id } = formData;
-  console.log(user_id)
 
+  const { title, serving_size, image, directions, user_id } = formData;
+  console.log(user_id);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,77 +34,79 @@ export default function RecipeCreate(props) {
 
   return (
     <>
-      <span className='create-recipe-banner'>CREATE A RECIPE</span>
-      <form
-        className='create-recipe-form'
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleRecipeCreate(formData);
-          setToggle(true)
-        }}
-      >
-        <label>
-          TITLE:
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={handleChange}
-            disabled={toggle}
-          />
-        </label>
-        <br />
-        <label>
-          SERVING SIZE:
-          <input
-            type="text"
-            name="serving_size"
-            value={serving_size}
-            onChange={handleChange}
-            disabled={toggle}
-          />
-        </label>
-        <br />
-        <label>
-          DIRECTIONS:
-          <input
-            type="text"
-            name="directions"
-            value={directions}
-            onChange={handleChange}
-            disabled={toggle}
-          />
-        </label>
-        <br />
-        <label>
-          IMAGE:
-          <input
-            type="text"
-            name="image"
-            value={image}
-            onChange={handleChange}
-            disabled={toggle}
-          />
-        </label>
-        <br />
-        {/* <label>
-          INGREDIENTS:
-          <input
-            type="text"
-            name="image"
-            value={image}
-            onChange={handleChange}
-          />
-        </label> */}
-        {/* <br />
-        <span>ADD </span><span> DELETE</span> */}
-        <br />
-        <button disabled={toggle} >NEXT</button>
-      </form>
-      {toggle && <IngredientForm
-        recipeId={recipeId}
-        handleIngredientCreate={handleIngredientCreate}
-      />}
+      <div className="create-recipe-ruler">
+        <div className="create-recipe-container">
+            <form
+              className="create-recipe-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleRecipeCreate(formData);
+                setToggle(true);
+              }}
+            >
+              <span className="create-recipe-banner">CREATE A RECIPE</span>
+              <label className="create-form-label">
+                TITLE:
+                <input
+                  className="create-form-input"
+                  type="text"
+                  name="title"
+                  value={title}
+                  onChange={handleChange}
+                  disabled={toggle}
+                />
+              </label>
+              <label className="create-form-label">
+                SERVING SIZE:
+                <input
+                  className="create-form-input"
+                  type="text"
+                  name="serving_size"
+                  value={serving_size}
+                  onChange={handleChange}
+                  disabled={toggle}
+                />
+              </label>
+              <label className="create-form-label">
+                DIRECTIONS:
+                <textarea
+                  className="create-form-input"
+                  rows="10"
+                  type="text"
+                  name="directions"
+                  value={directions}
+                  onChange={handleChange}
+                  disabled={toggle}
+                />
+              </label>
+              <label className="create-form-label">
+                IMAGE:
+                <input
+                  className="create-form-input"
+                  type="text"
+                  name="image"
+                  value={image}
+                  onChange={handleChange}
+                  disabled={toggle}
+                />
+              </label>
+              <button
+                className="create-form-ing-button active"
+                disabled={toggle}
+              >
+                ADD INGREDIENTS
+              </button>
+              <br />
+              {toggle && (
+                <IngredientForm
+                  className="create-form-input"
+                  recipeId={recipeId}
+                  handleIngredientCreate={handleIngredientCreate}
+                />
+              )}
+            </form>
+          </div>
+      </div>
     </>
   );
 }

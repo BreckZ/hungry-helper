@@ -1,0 +1,79 @@
+.ing-form {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+
+.ing-form-label {
+  display: block;
+  padding: .5em 0em;
+}
+
+.ing-form-container {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: row;
+  margin: 0.5em 0em;
+}
+
+.ing-form-input {
+  font-size: 1em;
+  padding: 0.4em;
+  width: 85%;
+}
+
+.ing-form-delete-button {
+  align-self: center;
+  background-color: #f41d37;
+  border: none;
+  box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  -webkit-box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  -moz-box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5em;
+  height: 3em;
+  margin: 0 auto 0 auto;
+  width: 3em;
+}
+
+.ing-form-delete-button:active {
+  background: #e5e5e5;
+  background-color: #f41d37;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+  transform: translate(2px, 2px);
+}
+
+a {
+  text-align: center;
+}
+
+.ing-form-button {
+  align-self: center;
+  background-color: #f41d37;
+  border: none;
+  box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  -webkit-box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  -moz-box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  box-shadow: 2px 2px 4px rgb(128, 128, 128);
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5em;
+  height: 2.5em;
+  margin: 1em 0em 0em 0em;
+  width: 12em;
+}
+
+.ing-form-button:active {
+  background: #e5e5e5;
+  background-color: #f41d37;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+  -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  outline: none;
+  transform: translate(2px, 2px);
+}

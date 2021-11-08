@@ -17,7 +17,9 @@ function RecipeDetail(props) {
       const recipeIngredients = await getAllIngredients();
       setRecipe(recipe);
       setIngredients(
-        recipeIngredients?.filter((ingredient) => ingredient.recipe_id === Number(id))
+        recipeIngredients?.filter(
+          (ingredient) => ingredient.recipe_id === Number(id)
+        )
       );
     };
     fetchDetail();
@@ -25,26 +27,31 @@ function RecipeDetail(props) {
   console.log(id);
   return (
     <>
-      <div>RECIPE DETAIL</div>
-      <div className="detail-image-container">
-        <img className="detail-image" src={recipe.image} alt={recipe.image} />
+      <div className="detail-ruler">
+        <div className="detail-container">
+          <div className="detail-image-container">
+            <img
+              className="detail-image"
+              src={recipe.image}
+              alt={recipe.title}
+            />
+          </div>
+          <div>{recipe.title}</div>
+          <div>
+            {ingredients?.map((list) => {
+              return <div key={list?.id}>{list?.food_name}</div>;
+            })}
+          </div>
+          {currentUser?.id === recipe.user_id && (
+            <>
+              <Link to={`/recipes/${id}/edit`}>
+                <button>EDIT</button>
+              </Link>
+              <button onClick={() => handleRecipeDelete(id)}>DELETE</button>
+            </>
+          )}
         </div>
-      <div>{recipe.title}</div>
-      <div>
-        {ingredients?.map((list) => {
-          return <div key={list?.id}>{list?.food_name}</div>
-        })}
       </div>
-      {currentUser?.id === recipe.user_id && (
-        <>
-          <Link to={`/recipes/${id}/edit`}>
-            <button>EDIT</button>
-          </Link>
-          <button
-            onClick={()=> handleRecipeDelete(id)}
-          >DELETE</button>
-        </>
-      )}
     </>
   );
 }
