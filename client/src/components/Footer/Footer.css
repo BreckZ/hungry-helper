@@ -4,6 +4,28 @@ footer {
   bottom: 0;
   color: #ffffff;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
   font-size: 32px;
   height: 10vh;
+}
+
+.catch-phrase {
+  color: #ffffff;
+  font-size: 1em;
+}
+
+.contact-us {
+  color: #ffffff;
+  font-size: 1em;
+}
+
+.github {
+  display: block;
+  height: 2em;
+  width: 2em;
+}
+
+a {
+  text-decoration: none;
 }

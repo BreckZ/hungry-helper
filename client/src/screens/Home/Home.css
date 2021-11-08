@@ -1,7 +1,7 @@
 /*===== THIS WRAPS THE ENTIRE HOME PAGE =====*/
 .home-container {
   /* background-color: lightcyan; */
-  border: 2px solid cyan;
+  /* border: 2px solid cyan; */
   height: fit-content;
   padding: 4em;
 }
@@ -134,14 +134,14 @@
 
 /*========= SUB CONTAINER 3 =========*/
 .sub-container-3 {
-  border: 2px solid cyan;
+  /* border: 2px solid cyan; */
   display: flex;
   justify-content: space-between;
   padding: 4em 0em;
 }
 
 .recipe-card {
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   height: 25em;
   width: 20em;
   /* object-fit: cover;
@@ -154,7 +154,7 @@
 }
 
 .card-image {
-  border: 2px solid palegreen;
+  /* border: 2px solid palegreen; */
   height: 60%;
   object-fit: cover;
   width: 100%;

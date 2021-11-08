@@ -47,9 +47,9 @@ function Home() {
           <div className="sub-header-text">
             <span className="branding-header branding">SAVOR</span>
             <span className="branding-content branding">
-              Something that is catchy and describes what is going on should be
-              written here. It will be helpful to the user to understand more
-              about your really cool application.
+              The Hungry Helper aspires to provide you with an experience that will
+              keep you coming back to enjoy these tried and tested recipes and make
+              dinner time the prime time of your day.
             </span>
           </div>
         </div>

@@ -1,6 +1,6 @@
 .detail-ruler {
   align-items: center;
-  border: 2px solid cyan;
+  /* border: 2px solid cyan; */
   display: flex;
   flex-direction: Row;
   height: 80vh;
