@@ -62,6 +62,11 @@
   width: 87%;
 }
 
+.edit-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .edit-form-delete-button {
   align-self: center;
   background-color: #f41d37;

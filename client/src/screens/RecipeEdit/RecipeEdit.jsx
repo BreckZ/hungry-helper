@@ -88,84 +88,86 @@ export default function RecipeEdit(props) {
     <>
       <div className="edit-recipe-ruler">
         <div className="edit-recipe-container">
-        <div className="edit-recipe-form"></div>
-          <form
-            // className="edit-recipe-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleRecipeUpdate(id, formData);
-            }}
-          >
-            
-            <span className="edit-recipe-banner">EDIT RECIPE</span>
-            <label className="edit-form-label">
-              TITLE:
-              <input
-                className="edit-form-input"
-                type="text"
-                name="title"
-                value={title}
-                onChange={handleChange}
-              />
-            </label>
-            <label className="edit-form-label">
-              SERVING SIZE:
-              <input
-                className="edit-form-input"
-                type="text"
-                name="serving_size"
-                value={serving_size}
-                onChange={handleChange}
-              />
-            </label>
-            <label className="edit-form-label">
-              DIRECTIONS:
-              <textarea
-                className="edit-form-input"
-                rows="10"
-                type="text"
-                name="directions"
-                value={directions}
-                onChange={handleChange}
-              />
-            </label>
-            <label className="edit-form-label">
-              IMAGE:
-              <input
-                className="edit-form-input"
-                type="text"
-                name="image"
-                value={image}
-                onChange={handleChange}
-              />
-            </label>
-            <label className="edit-form-label">INGREDIENTS:</label>
-            {formData.ingredients.map((ing, index) => (
-              <div className="edit-form-ing-container">
+          <div className="edit-recipe-form">
+            <form
+              // className="edit-recipe-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleRecipeUpdate(id, formData);
+              }}
+            >
+              <span className="edit-recipe-banner">EDIT RECIPE</span>
+              <label className="edit-form-label">
+                TITLE:
                 <input
-                  className="edit-form-ing-input"
-                  name={index}
-                  value={ing.food_name}
-                  onChange={handleIngredientChange}
+                  className="edit-form-input"
+                  type="text"
+                  name="title"
+                  value={title}
+                  onChange={handleChange}
                 />
-                {formData.ingredients.length > 1 && (
-                  <button
-                    className="edit-form-delete-button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleRemoveInput(index);
-                    }}
-                  >
-                    X
-                  </button>
-                )}
-              </div>
-            ))}
-          </form>
+              </label>
+              <label className="edit-form-label">
+                SERVING SIZE:
+                <input
+                  className="edit-form-input"
+                  type="text"
+                  name="serving_size"
+                  value={serving_size}
+                  onChange={handleChange}
+                />
+              </label>
+              <label className="edit-form-label">
+                DIRECTIONS:
+                <textarea
+                  className="edit-form-input"
+                  rows="10"
+                  type="text"
+                  name="directions"
+                  value={directions}
+                  onChange={handleChange}
+                />
+              </label>
+              <label className="edit-form-label">
+                IMAGE:
+                <input
+                  className="edit-form-input"
+                  type="text"
+                  name="image"
+                  value={image}
+                  onChange={handleChange}
+                />
+              </label>
+              <label className="edit-form-label">INGREDIENTS:</label>
+              {formData.ingredients.map((ing, index) => (
+                <div className="edit-form-ing-container">
+                  <input
+                    className="edit-form-ing-input"
+                    name={index}
+                    value={ing.food_name}
+                    onChange={handleIngredientChange}
+                  />
+                  {formData.ingredients.length > 1 && (
+                    <button
+                      className="edit-form-delete-button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleRemoveInput(index);
+                      }}
+                    >
+                      X
+                    </button>
+                  )}
+                </div>
+              ))}
+              <div className="edit-button-container">
             <button className="edit-form-button" onClick={addIngredient}>
               ADD
             </button>
             <button className="edit-form-button">SUBMIT</button>
+            </div>
+            </form>
+          </div>
         </div>
       </div>
     </>
